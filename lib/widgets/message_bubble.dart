@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../models/message.dart';
 
@@ -60,10 +58,10 @@ class MessageBubble extends StatelessWidget {
                       if (!isMe)
                         Text(
                           message.senderName,
-                          style: GoogleFonts.poppins(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: const Color(0xFF667eea),
+                            color: Color(0xFF667eea),
                           ),
                         ),
                       const SizedBox(height: 4),
@@ -74,7 +72,7 @@ class MessageBubble extends StatelessWidget {
                         children: [
                           Text(
                             DateFormat('HH:mm').format(message.timestamp),
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 10,
                               color: isMe ? Colors.white70 : Colors.grey[600],
                             ),
@@ -98,7 +96,7 @@ class MessageBubble extends StatelessWidget {
             if (isMe) _buildAvatar(),
           ],
         ),
-      ).animate().slideX(begin: isMe ? 0.3 : -0.3, duration: 300.ms).fadeIn(),
+      ),
     );
   }
 
@@ -108,7 +106,7 @@ class MessageBubble extends StatelessWidget {
       backgroundColor: const Color(0xFF667eea),
       child: Text(
         message.senderName[0].toUpperCase(),
-        style: GoogleFonts.poppins(
+        style: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 12,
@@ -136,7 +134,7 @@ class MessageBubble extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 message.content,
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   color: isMe ? Colors.white : Colors.black87,
                 ),
               ),
@@ -160,7 +158,7 @@ class MessageBubble extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 message.fileName ?? 'File',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   color: isMe ? Colors.white : Colors.black87,
                 ),
               ),
@@ -170,7 +168,7 @@ class MessageBubble extends StatelessWidget {
       default:
         return Text(
           message.content,
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             color: isMe ? Colors.white : Colors.black87,
             fontSize: 14,
           ),

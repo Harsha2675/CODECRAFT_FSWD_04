@@ -42,3 +42,35 @@ A Flutter-based real-time chat application using WebSocket technology for instan
 - `web_socket_channel`: WebSocket connectivity
 - `uuid`: Unique ID generation
 - `shared_preferences`: Local data persistence
+- `intl`: Internationalization support
+
+## Project Structure
+
+```
+lib/
+├── models/
+│   ├── user.dart
+│   ├── message.dart
+│   └── chat_room.dart
+├── services/
+│   ├── auth_service.dart
+│   ├── websocket_service.dart
+│   └── chat_history_service.dart
+├── screens/
+│   ├── login_screen.dart
+│   ├── chat_screen.dart
+│   └── user_list_screen.dart
+├── widgets/
+│   ├── message_bubble.dart
+│   ├── chat_input_field.dart
+│   └── typing_indicator.dart
+└── main.dart
+```
+
+## Getting Started
+
+This project is a starting point for a Flutter application with real-time chat capabilities.
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'services/auth_service.dart';
 import 'screens/login_screen.dart';
-import 'screens/advanced_main_screen.dart';
+import 'screens/chat_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +26,6 @@ class ChatApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           elevation: 0,
@@ -80,7 +79,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
         }
         
         if (snapshot.hasData && snapshot.data != null) {
-          return AdvancedMainScreen(currentUser: snapshot.data!);
+          return ChatScreen(currentUser: snapshot.data!);
         }
         
         return const LoginScreen();
